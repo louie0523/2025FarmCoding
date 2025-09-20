@@ -45,5 +45,8 @@ public class TImeManager : MonoBehaviour
         float t = Mathf.Sin(Mathf.PI * currentTime / 24f);
 
         float ex = Mathf.Lerp(SkyMatMin, SkyMatMin, t);
+        Sky.SetFloat("_Exposure", ex);
+
+        DefaultLight.color = Color.Lerp(MinLightColor, MaxLightColor, t);
     }
 }
